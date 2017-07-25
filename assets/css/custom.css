@@ -1,0 +1,7 @@
+#catalogues .label {
+    font-weight: bold;
+}
+
+a.image {
+    cursor: pointer;
+}
