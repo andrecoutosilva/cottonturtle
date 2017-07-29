@@ -68,6 +68,15 @@
 						// Set this link to active
 							t.addClass('active');
 
+							if (t.attr('id') === "portfolio-link")
+							{
+								if ($('.sub-menu').css('height') === "0px")
+								{
+									$('.sub-menu').css('height', "170px");
+								} else {
+									$('.sub-menu').css('height', "0px");
+								}
+							}
 					});
 
 			// Initialize scrollzer.
