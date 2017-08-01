@@ -29,8 +29,11 @@
 
 		<!-- UI JS file -->
 		<script src="assets/thirdparty/photoswipe/photoswipe-ui-default.min.js"></script> 
-		<script src="assets/js/angular.min.js"></script> 
-		<script src="assets/js/main.controller.js"></script> 
+		<script src="assets/thirdparty/angular/angular.min.js"></script> 
+
+		<!-- Custom Js Files -->
+		<script src="assets/js/utils/utils.js"></script> 
+		<script src="assets/js/controllers/main.controller.js"></script> 
 	</head>
 	<body ng-controller="MainController">
 
@@ -118,9 +121,9 @@
 										<article ng-repeat="quilt in twoQuilt" class="item" data-pswp-uid="{{quilt.index}}">
 											<a class="image fit" data-size="{{quilt.datasize}}">
 												<img ng-click="thumbnailClick(quilt.index)"
-													ng-src="images/{{quilt.year}}/thumbs/{{quilt.filename}}" 
+													ng-src="{{quilt.thumb}}" 
 													alt="{{quilt.name}}"
-													data-size="{{quilt.datasize}}" />
+													data-size="{{quilt.datasize}}"/>
 											</a>
 											<header><h3>{{quilt.name}}</h3></header>
 										</article>
@@ -343,13 +346,13 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollzer.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="assets/thirdparty/jquery/jquery.min.js"></script>
+			<script src="assets/thirdparty/jquery/jquery.scrolly.min.js"></script>
+			<script src="assets/thirdparty/jquery/jquery.scrollzer.min.js"></script>
+			<script src="assets/thirdparty/html5up/skel.min.js"></script>
+			<script src="assets/thirdparty/html5up/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/thirdparty/html5up/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/thirdparty/html5up/main.js"></script>
 			<script src="assets/js/gallery.js"></script>
 
 	</body>
