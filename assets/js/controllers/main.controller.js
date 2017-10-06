@@ -1,5 +1,7 @@
 // Define the `cottonTurtleApp` module
 var cottonTurtleApp = angular.module('cottonTurtleApp', []);
+var quilts2017pv = "images/2017/quilts/quilts.json";
+var quilts2017oi = "images/2017oi/quilts/quilts.json";
 
 // Define the `MainController` controller on the `phonecatApp` module
 cottonTurtleApp.controller('MainController', function MainController($scope) {
@@ -14,7 +16,7 @@ cottonTurtleApp.controller('MainController', function MainController($scope) {
     (function initialize() {
         
 
-        readTextFile("images/2017/quilts/quilts.json", function(text){
+        readTextFile(quilts2017oi, function(text){
         
             quiltsDatabase = JSON.parse(text);        
         
@@ -24,7 +26,7 @@ cottonTurtleApp.controller('MainController', function MainController($scope) {
             for(var i = 0; i < quiltsDatabase.length; i++) {
 
                 obj = quiltsDatabase[i];
-                if (i%2 == 0) {
+                if (i%2 === 0) {
                     $scope.quilts.push([obj]);
                 } else {
                     $scope.quilts[Math.floor(i/2)].push(obj);
@@ -43,7 +45,7 @@ cottonTurtleApp.controller('MainController', function MainController($scope) {
                 options;
                             
         // define options (if needed)
-        var options = {
+        options = {
             // optionName: 'option value'
             // for example:
             index: clickedIndex - 1 // start at first slide
